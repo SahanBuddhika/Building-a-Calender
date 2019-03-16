@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Calender from "./components/Calender";
+
+const style = { //this for Calender
+  position:"relative",
+  margin:"50px auto"
+  
+}
+
 
 class App extends Component {
+  
+  onDayClick = (e ,day) => {
+    alert("The Day You Select Is : " + day);
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <Calender style= {style} width="302px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
         </header>
       </div>
     );
